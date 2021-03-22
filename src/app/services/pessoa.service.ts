@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {Pessoa} from '../model/pessoa';
@@ -14,8 +14,11 @@ export class PessoaService {
   constructor(private http: HttpClient) {
   }
 
-  listarPessoa(): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(`${this.baseUrl}`);
+  listarPessoa(pagina: number, tamanho: number): Observable<Pessoa[]> {
+    let params = new HttpParams();
+    params = params.set('page', pagina.toString()).delete('page', '');
+    params = params.set('size', tamanho.toString()).delete('size', '');
+    return this.http.get<Pessoa[]>(`${this.baseUrl}`, {params: params});
   }
 
   listarPais(): Observable<Nacionalidade[]> {

@@ -1,4 +1,4 @@
  class Nacionalidade {
-   codigo: string;
+   codigo: number;
    nome: string;
  }

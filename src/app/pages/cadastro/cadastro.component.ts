@@ -17,7 +17,7 @@ export class CadastroComponent implements OnInit {
   nacionalidade: Nacionalidade[];
   naturalidade: Naturalidade[];
   codigo: number;
-  modoExibicao!: boolean;
+  modoExibicao: boolean;
 
   constructor(private pessoaService: PessoaService,
               private fb: FormBuilder,
@@ -35,6 +35,16 @@ export class CadastroComponent implements OnInit {
     if(!this.modoExibicao) {
       this.buscaPorPessoa();
     }
+
+  }
+
+  habilitar(event: any) {
+    if(event == 33) {
+     this.formPessoa.get('naturalidade').enable();
+    } else {
+      this.formPessoa.get('naturalidade').disable();
+      this.formPessoa.get('naturalidade').reset();
+    }
   }
 
   pessoaForm() {
@@ -47,7 +57,7 @@ export class CadastroComponent implements OnInit {
           codigo: [ '', Validators.required]
         }),
         naturalidade: this.fb.group({
-          codigo: [ '', Validators.required]
+          codigo: [ {value: '', disabled: true}, Validators.required]
         }),
         cpf: ['', Validators.required],
     });

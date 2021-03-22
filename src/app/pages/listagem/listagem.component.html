@@ -4,16 +4,50 @@
       <!-- Card stats -->
       <div class="row">
         <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0" *ngIf="pessoa?.length">
+          <div class="card card-stats mb-4 mb-xl-0" *ngIf="totalDeElementos">
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Pessoas</h5>
-                  <span class="h2 font-weight-bold mb-0">{{ pessoa.length }}</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Total de Pessoas</h5>
+                  <span class="h2 font-weight-bold mb-0">{{ totalDeElementos }}</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                    <i class="fas fa-chart-pie"></i>
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Total de Páginas</h5>
+                  <span class="h2 font-weight-bold mb-0">{{ totalDePagina }}</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <i class="fas fa-book"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Página Atual</h5>
+                  <span class="h2 font-weight-bold mb-0">{{ paginaAtual + 1 }}</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <i class="fas fa-sticky-note"></i>
                   </div>
                 </div>
               </div>
@@ -117,21 +151,22 @@
         <div class="card-footer py-4">
           <nav aria-label="...">
             <ul class="pagination justify-content-end mb-0">
-              <li class="page-item disabled">
-                <a class="page-link" href="javascript:void(0)" tabindex="-1">
+              <li class="page-item">
+                <a class="page-link" tabindex="-1" (click)="voltar()">
                   <i class="fas fa-angle-left"></i>
                   <span class="sr-only">Previous</span>
                 </a>
               </li>
-              <li class="page-item active">
+              <!-- <li class="page-item active">
                 <a class="page-link" href="javascript:void(0)">1</a>
               </li>
               <li class="page-item">
                 <a class="page-link" href="javascript:void(0)">2 <span class="sr-only">(current)</span></a>
               </li>
-              <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
               <li class="page-item">
-                <a class="page-link" href="javascript:void(0)">
+                <a class="page-link" href="javascript:void(0)">3</a></li> -->
+              <li class="page-item">
+                <a class="page-link" (click)="avancar()">
                   <i class="fas fa-angle-right"></i>
                   <span class="sr-only">Next</span>
                 </a>

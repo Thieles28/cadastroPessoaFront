@@ -1,4 +1,4 @@
 class Naturalidade {
-  codigo: string;
+  codigo: number;
   nome: string;
 }
