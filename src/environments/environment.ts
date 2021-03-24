@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/pessoa',
+  apiUrl: 'http://localhost:8080https://app-cadastro-pessoa-back.herokuapp.com/pessoa',
 };
 
 /*
