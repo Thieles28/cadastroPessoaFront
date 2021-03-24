@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "10.1.4",
     "@angular/router": "10.1.4",
     "@ng-bootstrap/ng-bootstrap": "7.0.0",
+    "angular5-social-login": "^1.0.9",
     "bootstrap": "4.5.2",
     "chart.js": "2.9.3",
     "clipboard": "2.0.6",
@@ -31,7 +32,8 @@
     "ngx-mask": "^11.1.5",
     "ngx-toastr": "^13.0.0",
     "nouislider": "14.6.2",
-    "rxjs": "6.6.3",
+    "rxjs": "^6.6.3",
+    "rxjs-compat": "^6.6.6",
     "zone.js": "0.11.1"
   },
   "devDependencies": {
