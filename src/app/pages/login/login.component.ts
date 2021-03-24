@@ -14,29 +14,29 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  public socialSignIn(socialPlatform : string) {
+  // public socialSignIn(socialPlatform : string) {
 
-    let socialPlatformProvider;
-    if(socialPlatform == "google"){
-      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    }
+  //   let socialPlatformProvider;
+  //   if(socialPlatform == "google"){
+  //     socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+  //   }
 
-    this.socialAuthService.signIn(socialPlatformProvider).then(
-      (userData) => {
-        console.log(socialPlatform+" sign in data : " , userData);
+  //   this.socialAuthService.signIn(socialPlatformProvider).then(
+  //     (userData) => {
+  //       console.log(socialPlatform+" sign in data : " , userData);
 
-        if (userData != null) {
-               this.authorized = true;
-               this.user = userData;
-            }
-      }
-    );
-  }
+  //       if (userData != null) {
+  //              this.authorized = true;
+  //              this.user = userData;
+  //           }
+  //     }
+  //   );
+  // }
 
-  public signOut(){
-      this.socialAuthService.signOut();
-      this.authorized = false;
-  }
+  // public signOut(){
+  //     this.socialAuthService.signOut();
+  //     this.authorized = false;
+  // }
 
   ngOnDestroy() {
   }
